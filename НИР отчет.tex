@@ -1,0 +1,196 @@
+\documentclass[14pt,a4paper]{article}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amssymb}
+\usepackage[russian]{babel}
+%\renewcommand{\rmdefault}{ftm}  %Times New Roman
+%\usepackage{graphicx}
+%\usepackage{courier}
+\usepackage{amsmath}
+
+
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\DeclareGraphicsExtensions{.eps,.bmp,.jpg,.png}
+%\usepackage{ccaption}
+%\captiondelim{~---~} 
+%\addto\captionsrussian{ \def\figurename{Рисунок} }
+\usepackage{caption}
+\captionsetup[figure]{name=Рисунок,labelsep=endash,font={Large}}
+\usepackage{listings}
+%\usepackage[font={Large}]{caption}
+
+\usepackage{listings}
+\usepackage{algorithm2e}
+
+%\lstset{numbers=left , language= C  }
+
+\usepackage{tocloft}
+%mcourier
+%\renewcommand{\ttdefault}{fcr}
+
+\usepackage{geometry}
+\geometry{left=3.0cm}
+\geometry{right=1.0cm}
+\geometry{top=2cm}
+\geometry{bottom=2cm}
+
+\newcommand{\biggI}{\renewcommand{\baselinestretch}{1.3}}
+% команда \biggI для полуторного межстрочного интервала
+\makeatletter
+\renewcommand{\@oddfoot}{\hfil \Large \arabic{page}\hfil}
+\renewcommand{\@evenfoot}{\hfil \Large \arabic{page}\hfil}
+\makeatother
+\renewcommand{\thepage}{\hfil \Large \arabic{page}\hfil}
+
+\usepackage{indentfirst} % Красная строка
+
+\fontencoding{T1}
+\fontfamily{pcr}
+\selectfont
+
+
+ %---------------- заголовки ----------- %
+\usepackage{titlesec}
+\usepackage{enumerate}
+\titleformat{\chapter}[display]
+    {\filcenter}
+    {\MakeUppercase{\chaptertitlename} \thechapter}
+    {8pt}
+    {\bfseries}{}
+ 
+\titleformat{\section}[block]
+    {\Large\bfseries\sloppy\righthyphenmin62}
+    {\thesection}
+    {1em}{}
+ 
+\titleformat{\subsection}[block]
+    {\Large\bfseries\sloppy\righthyphenmin62}
+    {\thesubsection}
+    {1em}{}
+
+\titleformat{\subsubsection}[block]
+    {\Large\bfseries\sloppy\righthyphenmin62}
+    {\thesubsubsection}
+    {1em}{}
+
+
+\usepackage{titletoc}
+%\titlecontents{section}[1.6em]{}{1.6em}{1pc}
+%\titlecontents{subsection}[2.6em]{}{2.6em}{1pc}
+%\titlecontents{subsubsection}[2.6em]{}{2.6em}{1pc}
+\titlecontents{section}
+[2.6em] % ie, 1.5em (chapter) + 2.3em
+{\sloppy\righthyphenmin62}
+{\contentslabel{2.6em}}
+{\hspace*{-2.6em}}
+{\titlerule*[1pc]{}\contentspage}
+
+\titlecontents{subsection}
+[2.6em] % ie, 1.5em (chapter) + 2.3em
+{\sloppy\righthyphenmin62}
+{\contentslabel{2.6em}}
+{\hspace*{-2.6em}}
+{\titlerule*[1pc]{}\contentspage}
+
+\titlecontents{subsubsection}
+[2.6em] % ie, 1.5em (chapter) + 2.3em
+{\sloppy\righthyphenmin62}
+{\contentslabel{2.6em}}
+{\hspace*{-2.6em}}
+{\titlerule*[1pc]{}\contentspage}
+
+
+    
+% Настройка вертикальных и горизонтальных отступов
+% Настройка вертикальных и горизонтальных отступов
+\titlespacing{\section}{\parindent}{15mm}{10mm}
+\titlespacing{\subsection}{\parindent}{15mm}{10mm}
+\titlespacing{\subsubsection}{\parindent}{15mm}{10mm}
+
+%------- конец заголовков --------- %
+
+
+\lstdefinelanguage{cs}
+  {morekeywords={abstract,event,new,struct,as,explicit,null,switch
+		base,extern,object,this,bool,false,operator,throw,
+		break,finally,out,true,byte,fixed,override,try,
+		case,float,params,typeof,catch,for,private,uint,
+		char,foreach,protected,ulong,checked,goto,public,unchecked,
+		class,if,readonly,unsafe,const,implicit,ref,ushort,
+		continue,in,return,using,decimal,int,sbyte,virtual,
+		default,interface,sealed,volatile,delegate,internal,short,void,
+		do,is,sizeof,while,double,lock,stackalloc,
+		else,long,static,enum,namespace,string, },
+	  sensitive=false,
+	  morecomment=[l]{//},
+	  morecomment=[s]{/*}{*/},
+	  morestring=[b]",
+}
+
+\setlength\cftaftertoctitleskip{11mm}
+\renewcommand{\cftdot}{}
+  
+%\setmainfont{Times New Roman}
+\parindent=1.25cm % абзацный отступ
+\biggI
+
+
+\thispagestyle{empty} % не ставим номер страницы
+\usepackage{float}%"Плавающие" картинки
+\newcommand{\imgh}[3]{
+\begin{figure}[H]
+\center{
+\includegraphics[width=#1]{#2}}
+\caption{#3}
+\label{ris:#2}
+\end{figure}
+}
+
+\makeatletter
+\bibliographystyle{utf8gost705u} % Оформляем библиографию в соответствии с ГОСТ 7.0.5
+\renewcommand{\@biblabel}[1]{#1.}   % Заменяем библиографию с квадратных скобок на точку:
+\makeatother
+
+% новая команда \RNumb для вывода римских цифр
+\newcommand{\RNumb}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+
+%  маркированные списки
+\renewcommand{\labelitemi}{-}
+\renewcommand{\labelitemii}{-}
+%  нумерованные списки
+\renewcommand{\labelenumi}{\arabic{enumi})}
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=\parindent}
+
+%\usepackage{hyperref}
+%\urlstyle{same}
+
+\begin{document}
+\renewcommand*\contentsname{\parindent=1.25cm Содержание}
+\Large
+\setcounter{page}{5} % начать нумерацию с номера три
+
+\newpage
+\tableofcontents % это оглавление, которое генерируется автоматически
+\Large
+\setcounter{secnumdepth}{-1}
+
+\input{introdution}
+
+\setcounter{secnumdepth}{3}
+
+\input{1-chapter}
+
+\input{2-chapter}
+
+\input{3-chapter}
+
+\setcounter{secnumdepth}{-1}
+\input{conclusion}
+
+\input{bibliography}
+
+\input{applications}
+
+\end{document}

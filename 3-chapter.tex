@@ -1,0 +1,78 @@
+\newpage
+\section{\Large Разработка программы для пакетной обработки температурных данных}
+Текст (рисунок ~\ref{ris:image_500x400})
+\\
+\imgh{1\linewidth}{image_500x400}{Подпись к картинке}
+\par
+Текст (рисунок ~\ref{ris:image_600x300})
+\\
+\imgh{1\linewidth}{image_600x300}{Подпись к картинке}
+
+%------------------------------------------------------------------------------------------------------
+
+\subsection{Подглава}
+Текст:
+\begin{itemize}
+	\item[-] Элемент списка;
+	\item[-] Элемент списка;
+	\item[-] Элемент списка;
+	\item[-] Элемент списка;
+	\item[-] Элемент списка.
+\end{itemize}
+\par
+Текст
+
+%------------------------------------------------------------------------------------------------------
+\subsection{Подглава}
+Текст (таблица 1).
+\begin{table}[H]
+	\begin{flushleft}\hspace{1.25cm}\Large Таблица 1 -- \label{tab:exp2values}Заголовок таблицы\end{flushleft}
+	\begin{center}
+		{\Large
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				\hspace{1cm}$x$\hspace{1cm} & \hspace{1cm}$y$\hspace{1cm} & \hspace{1cm}$z$\hspace{1cm} & \hspace{1cm}$T$\hspace{1cm} \\
+				\hline
+				$x_1$ & $y_1$ & $z_1$ & $T_1$ \\
+				\hline
+				$x_2$ & $y_2$ & $z_2$ & $T_2$ \\
+				\hline
+				... & ... & ... & ... \\
+				\hline
+				$x_n$ & $y_n$ & $z_n$ & $T_n$ \\
+				\hline
+			\end{tabular}
+		}
+	\end{center}
+\end{table}
+\par
+Текст
+
+%------------------------------------------------------------------------------------------------------
+
+\subsection{Подглава}\vspace{-7mm}
+\subsubsection{Параграф}
+Текст (листинг 1).
+\par Листинг 1 -- Подпись к листингу\\
+\large
+\begin{verbatim}
+class Program
+{
+    static void Main(string[] args)
+    {
+        Thread threadA = new Thread(() => Console.WriteLine("ThreadA"));
+        Thread threadB = new Thread(() => Console.WriteLine("ThreadB"));
+        threadA.Start();
+        threadB.Start();
+    }
+}
+\end{verbatim}
+\Large
+\par
+Текст
+
+\subsubsection{Параграф}
+Текст
+
+%------------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------------
